@@ -118,14 +118,15 @@ export default class DogNewForm extends Component {
                             onChange={this.handleChange}
                             placeholder='Contact Number'>
                         </input>
-                        <div>
-                            <label htmlFor="vaccines">Vaccines<input
+                        <div className="vaccines-container">
+                            <label htmlFor="vaccines">Vaccines
+                            </label>
+                            <input
                                 id='vaccines'
                                 type='checkbox'
                                 checked={this.state.vaccines}
                                 onChange={this.handleChange}
                             />
-                            </label>
                         </div>
                         <input
                             id='image1'

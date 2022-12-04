@@ -61,9 +61,9 @@ export default class LoginForm extends Component {
 
     render() {
         return(
-                <div className='form-title'>
+                <div className='login-form-container'>
                     <h2>Login</h2>
-                    <div>
+                    <div className="login-form">
                         <form onSubmit={this.handleSubmit}>
                         <input
                             id='email'
@@ -85,7 +85,6 @@ export default class LoginForm extends Component {
                         />
                         </form>
                     </div>
-                    <button onClick={this.getUser}>user</button>
                 </div>
         )
     }

@@ -76,7 +76,7 @@ export default class DogContainer extends Component {
                     <div className="dog-container">
                         <div className="dog-container-head">
                             <h2>Adopt</h2>
-                            <Link to="/new"><button className="new-button">Add New</button></Link>
+                            <Link to="/dogs/new"><button className="new-button">Add New</button></Link>
                         </div>
                         <Link className="linktitle" to="/dogs">
                         <div className="dog-card">

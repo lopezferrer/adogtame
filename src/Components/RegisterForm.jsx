@@ -55,9 +55,9 @@ export default class RegisterForm extends Component {
 
     render() {
         return(
-                <div className='form-title'>
+                <div className='register-form-container'>
                     <h2>Register</h2>
-                    <div className='user-container'>
+                    <div className='register-form'>
                         <form onSubmit={this.handleSubmit}>
                         <input
                             id='username'

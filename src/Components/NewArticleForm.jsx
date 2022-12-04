@@ -60,7 +60,7 @@ export default class DogNewForm extends Component {
         return(
                 <div className="form-title">
                     <h2>Add Article</h2>
-                    <div className="form-container">
+                    <div className="article-form-container">
                     <form onSubmit={this.handleSubmit}>
                         <input
                             id='title'

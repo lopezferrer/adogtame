@@ -8,11 +8,11 @@ export default class DogList extends Component {
         return (
             <div>
                 <div className="dog">
-                    <h3>Name: <span>{this.props.name}</span></h3>
+                    <h3>{this.props.name}</h3>
                     <img src={this.props.image1} alt={this.props.name} className="image1"/>
-                    <h3>Age: <span>{this.props.age} year(s) old</span> </h3>
-                    <h3>Breed: <span>{this.props.breed}</span></h3>
-                    <h3>City: <span>{this.props.city}</span></h3>
+                    <h4>Age: <span>{this.props.age} year(s) old</span> </h4>
+                    <h4>Breed: <span>{this.props.breed}</span></h4>
+                    <h4>City: <span>{this.props.city}</span></h4>
                     <button className="edit-button" onClick={()=> {
                         this.props.editDog(this.props.id);
                         this.props.updateIdOfDogToEdit(this.props.id);
