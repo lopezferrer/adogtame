@@ -1,0 +1,158 @@
+@media only screen and (min-width: 720px) {
+  body {
+    width: 100%;
+    height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  }
+
+  .adogtame-container {
+    max-width: 105%;
+    margin-left: -7px;
+  }
+
+  .apps-container {
+    max-width: 1000px;
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-top: 10px;
+  }
+
+  .logo {
+    width:100px;
+    user-select: none;
+  }
+
+  h1 {
+    font-size:40px;
+    padding-left: 20px;
+    user-select: none;
+  }
+
+  .linktitle {
+    text-decoration: none;
+    color: black;
+  }
+
+  .logo-and-name {
+    display: flex;
+    cursor: pointer;
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .navbar ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 0pt;
+    user-select: none;
+  }
+
+  .navbar .content-bar {
+    list-style-type: none;
+    width: 415px;
+    text-align: left;
+    font-weight:300;
+  }
+
+  .navbar .user-bar {
+    list-style-type: none;
+    width: 180px;
+    font-weight:300;
+  }
+
+  .linkstyle {
+    text-decoration: none;
+    color: black;
+    border-right: 1px solid black;
+    padding-right: 25px;
+    text-align: center;
+  }
+
+  .linkstyle-last {
+    width: 250px;
+    text-decoration: none;
+    color: black;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .footer-container {
+    width: 100%;
+    margin: auto;
+    background-color: lightgrey;
+  }
+
+  .footer {
+    max-width: 1000px;
+    height: 150px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 15px;
+    padding-left: 20px;
+  }
+
+  .home-container {
+    width: 99%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  h3 {
+    line-height: 0.5;
+  }
+
+  h3 span {
+    font-weight:400;
+  }
+
+  .dogs-app-container, .articles-app-container {
+    width: 48%;
+  }
+
+  .dog-container-head, .article-container-head {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .dog, .article {
+    width: 80%;
+    height: 60vh;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+  }
+
+  .dog img {
+    width: 100%;
+  }
+
+  .article img {
+    width: 100%;
+  }
+}
+
+
