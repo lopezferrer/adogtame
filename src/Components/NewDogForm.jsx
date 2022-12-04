@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import '../index.css'
-import Checkbox from './Checkbox.jsx'
 
 let baseURL = 'http://localhost:8000/api/v1/dogs/'
 
@@ -14,11 +13,16 @@ export default class DogNewForm extends Component {
             personality: '',
             city: '',
             contact_number: '',
-            vaccines: '',
+            vaccines: false,
             image1: '',
             image2: ''
         }
+        this.handleChecked = this.handleChecked.bind(this)
     }
+
+    handleChecked () {
+        this.setState({vaccines: !this.state.vaccines});
+      }
 
     handleChange = (e) => {
         this.setState({
@@ -72,6 +76,12 @@ export default class DogNewForm extends Component {
     }
 
     render() {
+        var txt;
+        if (this.state.vaccines === false) {
+          txt = 'true'
+        } else {
+          txt = 'false'
+        }
         return(
                 <div className="form-title">
                     <h2>Add Dog</h2>
@@ -125,8 +135,8 @@ export default class DogNewForm extends Component {
                             <input
                                 id='vaccines'
                                 type='checkbox'
-                                checked={this.state.vaccines}
-                                onChange={this.handleChange}
+                             
+                                onChange={this.handleChecked}
                             />
                         </div>
                         <input
