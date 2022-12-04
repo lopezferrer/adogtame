@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../index.css'
+import Checkbox from './Checkbox.jsx'
 
 let baseURL = 'http://localhost:8000/api/v1/dogs/'
 

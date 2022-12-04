@@ -20,6 +20,9 @@
     max-width: 104%;
     margin-left: -7px;
     padding-top: 10px;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: contain;
   }
 
   .apps-container {
@@ -139,6 +142,15 @@
     overflow: auto;
     height: auto;
     min-height: 100%;
+  }
+
+  .veterinarians-app-container {
+    max-width: 1000px;
+    display: block;
+    height: calc(100vh - 350px);
+    min-height: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .new-button, .input-button, .back-button, .delete-button, .edit-button, .register-button, .login-button{

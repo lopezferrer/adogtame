@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import '../index.css'
 
-
+let userAdmin = false
 export default class DogList extends Component {
 
     render() {
@@ -13,6 +13,9 @@ export default class DogList extends Component {
                     <h4>Age: <span>{this.props.age} year(s) old</span> </h4>
                     <h4>Breed: <span>{this.props.breed}</span></h4>
                     <h4>City: <span>{this.props.city}</span></h4>
+                    {
+                    userAdmin === true ?
+                    <div>
                     <button className="edit-button" onClick={()=> {
                         this.props.editDog(this.props.id);
                         this.props.updateIdOfDogToEdit(this.props.id);
@@ -21,6 +24,9 @@ export default class DogList extends Component {
                     <button className='delete-button' onClick={() => {
                         this.props.handleDeleteDog(this.props.id);
                     }}>Delete</button>
+                    </div>
+                    :
+                    <></>}
                 </div>
             </div>
         )

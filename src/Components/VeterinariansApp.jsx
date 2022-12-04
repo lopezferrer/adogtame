@@ -6,8 +6,10 @@ import '../index.css'
 export default class VeterinariansApp extends Component {
     render(){
         return(
-            <div className="Veterinarians-container">
-                <h2>Articles</h2>
+            <div className="home-container">
+                <div className="veterinarians-app-container">
+                    <h2>Veterinarians</h2>
+                </div>
             </div>
         )
     }
