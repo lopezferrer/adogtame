@@ -5,8 +5,14 @@ export default class LoginForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            user: [{
+                id: '',
+                username: '',
                 email: String('').toLowerCase(),
                 password: '',
+                admin: ''
+            }],
+            baseURL: 'http://localhost:8000/api/v1/user/login'
         }
     }
 
@@ -25,11 +31,7 @@ export default class LoginForm extends Component {
             mode: 'cors',
             method: 'POST',
             credentials: 'include',
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-                Origin: "http://localhost:3000",
-                },
+            headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
                 email: this.state.email,
                 password: this.state.password
