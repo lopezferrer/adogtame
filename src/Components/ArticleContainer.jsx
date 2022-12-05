@@ -5,7 +5,7 @@ import ArticleList from './ArticleList.jsx'
 import EditArticleForm from './EditArticleForm.jsx'
 
 
-let userAdmin = JSON.parse(window.localStorage.getItem('loggedUser'));
+let user = JSON.parse(window.localStorage.getItem('loggedUser'));
 export default class ArticleContainer extends Component {
     constructor(props) {
         super(props)
@@ -72,7 +72,7 @@ export default class ArticleContainer extends Component {
                     <div className="article-container2">
                         <div className="article-container-head">
                             <h2>Articles</h2>
-                            {userAdmin === null ?
+                            {user.admin === true ?
                             <Link to="/articles/new"><button className="new-button">Add New</button></Link>
                             :
                             <></>
