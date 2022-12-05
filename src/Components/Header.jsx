@@ -2,18 +2,27 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import '../index.css'
 
-
-let baseURL= 'http://localhost:8000/api/v1/'
-let user = undefined //Necesito la variable user para usarla en este componente y poder pasarla a otros donde tambiên será necesaria, según los permisos que tenga el usuario.
+let user = JSON.parse(window.localStorage.getItem('loggedUser'));
 
 export default class Header extends React.Component {
 
   logout = (e) => {
     e.preventDefault()
-    fetch('http://localhost:8000/api/v1/user/logout')
-    //;
+    fetch('http://localhost:8000/api/v1/user/logout', {
+      mode: "cors",
+      method: 'POST',
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json"
+      }})
+    .then( () => {
+      window.localStorage.removeItem("loggedUser");
+    })
+    .catch(e => {
+      console.log("e::> ",e);
+    })
+    
   }
-
   render(){
     return (
         <div className="header">
@@ -22,8 +31,8 @@ export default class Header extends React.Component {
           <h1><span>aDOGtame</span></h1>
         </div></Link>
         <div className="navbar">
-          <div className="content-bar">
-            <ul>
+          <div>
+            <ul className="content-bar">
               <li>
                 <Link className="linkstyle" to="/">Home</Link>
               </li>
@@ -38,9 +47,9 @@ export default class Header extends React.Component {
               </li>
             </ul>
           </div>
-          {user === undefined ?
-          <div className="user-bar">
-            <ul>
+          {user === null ?
+          <div>
+            <ul className="user-bar">
               <li>
                 <Link className="linkstyle" to="/register">Register</Link>
               </li>
@@ -53,10 +62,10 @@ export default class Header extends React.Component {
           <div className="user-bar">
             <ul>
               <li>
-                {`Hi, ${user}!`}
+                <p>{`Hi, ${user.username}!`}</p>
               </li>
               <li>
-                <button className="linkstyle-last" onClick={this.props.logout}
+                <button className="logout-button" onClick={this.logout}
                     >Logout</button>
               </li>
             </ul>

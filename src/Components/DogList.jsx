@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import '../index.css'
 
-let userAdmin = false
+let user = JSON.parse(window.localStorage.getItem('loggedUser'));
 export default class DogList extends Component {
 
     render() {
@@ -13,7 +13,7 @@ export default class DogList extends Component {
                     <h4>Age: <span>{this.props.age} year(s) old</span> </h4>
                     <h4>Breed: <span>{this.props.breed}</span></h4>
                     <h4>City: <span>{this.props.city}</span></h4>
-                    { userAdmin === true ?
+                    { user != null ?
                     <div>
                         <button className="edit-button" onClick={()=> {
                             this.props.editDog(this.props.id);

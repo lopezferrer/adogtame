@@ -1,5 +1,3 @@
-
-   
 import React, { Component } from 'react'
 import '../index.css'
 
@@ -14,7 +12,7 @@ export default class LoginForm extends Component {
                 password: '',
                 admin: ''
             }],
-            baseURL: 'http://localhost:8000/api/v1/user/user'
+            baseURL: 'http://localhost:8000/api/v1/user/login'
         }
     }
 
@@ -27,47 +25,49 @@ export default class LoginForm extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        fetch('http://localhost:8000/api/v1/user/login', {
+        console.log("this.state.email::> ",this.state.email);
+        console.log("this.state.password::> ",this.state.password);
+        fetch('http://localhost:8000/api/v1/user/login/', {
+            mode: 'cors',
             method: 'POST',
-            credentials: "include",
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            credentials: 'include',
+            headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
                 email: this.state.email,
-                password: this.state.password,
+                password: this.state.password
             }),
         })
-
-        // if we can fetch the data from this route, then proceed
         .then (res => { 
             if(res.ok) {
+                res.json().then(_json => {
+                    window.localStorage.setItem('loggedUser',JSON.stringify(_json.data));
+                })
                 return res.json()
             }
             throw new Error(res)
         })
-
         .then (resJson => {
             this.setState({
                 email: '',
                 password: ''
             }) 
-            window.location.href='http://localhost:3000/'
+            window.location.href='/'
         })
-        .catch(err => (alert("Login failed!")))
-       //.catch(err => (console.log(err)))
+        //.catch(err => (alert("Login failed!")))
+        .catch(err => (console.log(err)))
     }
 
 
     render() {
         return(
-                <div className='login-form-container'>
-                    <h2>Login</h2>
-                    <div className="login-form">
+            <div className='login-form-container'>
+                <h2>Login</h2>
+                <div className='login-form'>
                         <form onSubmit={this.handleSubmit}>
                         <input
                             id='email'
                             type='text'
+                            name= 'email'
                             value={this.state.email}
                             onChange={this.handleChange}
                             placeholder='Email'>
@@ -75,6 +75,7 @@ export default class LoginForm extends Component {
                         <input
                             id='password'
                             type='text'
+                            name= 'password'
                             value={this.state.password}
                             onChange={this.handleChange}
                             placeholder='Password'>

@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import '../index.css'
 
-let userAdmin = false
+let user = JSON.parse(window.localStorage.getItem('loggedUser'));
 
 export default class ArticleList extends Component {
 
@@ -13,8 +13,7 @@ export default class ArticleList extends Component {
                     <h5>{this.props.summary}</h5>
                     <img src={this.props.image} alt={this.props.title} className="image1"/>
                     <p>{this.props.body}</p>
-                    
-                    { userAdmin === true ?
+                    { user != null ?
                         <div>
                         <button className="edit-button" onClick={()=> {
                             this.props.editArticle(this.props.id);

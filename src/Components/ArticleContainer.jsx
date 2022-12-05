@@ -78,6 +78,7 @@ export default class ArticleContainer extends Component {
                             <></>
                             }
                         </div>
+                        <Link className="linktitle" to="/articles">
                         <div className="article-card">
                             {this.props.articles.map((article, index) => {
                                 return(
@@ -96,7 +97,7 @@ export default class ArticleContainer extends Component {
                                     />
                                 )
                             })}
-                        </div>   
+                        </div></Link>   
                     </div>
                 </div>
             )
