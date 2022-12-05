@@ -15,7 +15,7 @@ export default class VeterinarianList extends Component {
                     <p><span>City: </span>{this.props.city}</p>
                     <p><span>Phone: </span>{this.props.phone}</p>
                     <p><span>e-mail: </span>{this.props.email}</p>
-                    { user != null ?
+                    { user === null ?
                     <div>
                         <button className="edit-button" onClick={()=> {
                             this.props.editVeterinarian(this.props.id);

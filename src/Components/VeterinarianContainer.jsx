@@ -4,7 +4,7 @@ import '../index.css'
 import VeterinarianList from './VeterinarianList.jsx'
 import EditVeterinarianForm from './EditVeterinarianForm.jsx'
 
-let userAdmin = false
+let userAdmin = JSON.parse(window.localStorage.getItem('loggedUser'))
 export default class VeterinarianContainer extends Component {
     constructor(props) {
         super(props)
@@ -72,7 +72,7 @@ export default class VeterinarianContainer extends Component {
                     <div className="veterinarian-container">
                         <div className="veterinarian-container-head">
                             <h2>Veterinarians</h2>
-                            { userAdmin === true ?
+                            { userAdmin === null ?
                             <Link to="/veterinarians/new"><button className="new-button">Add New</button></Link>
                             :
                             <></>
