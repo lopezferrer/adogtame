@@ -6,23 +6,7 @@ let user = JSON.parse(window.localStorage.getItem('loggedUser'));
 
 export default class Header extends React.Component {
 
-  logout = (e) => {
-    e.preventDefault()
-    fetch('http://localhost:8000/api/v1/user/logout', {
-      mode: "cors",
-      method: 'POST',
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json"
-      }})
-    .then( () => {
-      window.localStorage.removeItem("loggedUser");
-    })
-    .catch(e => {
-      console.log("e::> ",e);
-    })
-    
-  }
+
   render(){
     return (
         <div className="header">
@@ -65,7 +49,7 @@ export default class Header extends React.Component {
                 <p>{`Hi, ${user.username}!`}</p>
               </li>
               <li>
-                <button className="logout-button" onClick={this.logout}
+                <button className="logout-button" onClick={this.props.logout}
                     >Logout</button>
               </li>
             </ul>

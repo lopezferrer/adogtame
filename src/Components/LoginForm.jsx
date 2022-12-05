@@ -48,8 +48,8 @@ export default class LoginForm extends Component {
             }) 
             window.location.href='/'
         })
-        //.catch(err => (alert("Login failed!")))
-        .catch(err => (console.log(err)))
+        .catch(err => (alert("Login failed!")))
+        //.catch(err => (console.log(err)))
     }
 
 

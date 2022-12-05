@@ -13,7 +13,7 @@ export default class DogList extends Component {
                     <h4>Age: <span>{this.props.age} year(s) old</span> </h4>
                     <h4>Breed: <span>{this.props.breed}</span></h4>
                     <h4>City: <span>{this.props.city}</span></h4>
-                    { user.username === this.props.username || user.admin === true ?
+                    { (user != null && user.username === this.props.username) ?
                     <div>
                         <button className="edit-button" onClick={()=> {
                             this.props.editDog(this.props.id);
