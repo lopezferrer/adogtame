@@ -60,7 +60,7 @@ export default class ArticleContainer extends Component {
             } throw new Error(res)
         })
         .then(resJson => {
-            window.location.href='http://localhost:3000/';
+            window.location.href='http://localhost:3000/articles';
         })
         .catch(err => (console.log(err))) 
     }

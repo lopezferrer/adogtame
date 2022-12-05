@@ -14,6 +14,7 @@ import NewArticleForm from './Components/NewArticleForm.jsx'
 import EditDog from './Components/EditDog.jsx'
 import DogContainer from './Components/DogContainer.jsx'
 import EditArticle from './Components/EditArticle.jsx';
+import NewVeterinarianForm from './Components/NewVeterinarianForm.jsx'
 
 
 export default class App extends React.Component {
@@ -33,6 +34,7 @@ export default class App extends React.Component {
               <Route path="/articles/new" element={<NewArticleForm />} />
               <Route path="/articles/edit" element={<EditArticle />} />
               <Route path="/veterinarians" element={<VeterinariansApp />} />
+              <Route path="/veterinarians/new" element={<NewVeterinarianForm />} />
               <Route path="/tips" element={<TipsApp />} />
               <Route path="/register" element={<RegisterForm />} />
               <Route path="/login" element={<LoginForm />} />

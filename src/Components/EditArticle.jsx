@@ -5,8 +5,10 @@ export default class EditArticle extends Component {
     render () {
         return (
             <div>
-                <h1>Edit Article</h1>
-                <EditArticleForm articles={this.props.articles} articleToEdit={this.props.articleToEdit} handleEditArticle={this.props.handleEditArticle}/>
+                <div className="article-container-head">
+                    <h1>Edit Article</h1>
+                </div>
+                    <EditArticleForm articles={this.props.articles} articleToEdit={this.props.articleToEdit} handleEditArticle={this.props.handleEditArticle}/>
             </div>
         )
     }

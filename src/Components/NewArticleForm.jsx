@@ -51,7 +51,7 @@ export default class DogNewForm extends Component {
                 image: '',
 
             }) 
-            window.location.href='http://localhost:3000/'
+            window.location.href='http://localhost:3000/articles'
         })
         .catch(err => (console.log(err)))
     }

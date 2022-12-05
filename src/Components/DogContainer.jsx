@@ -64,7 +64,7 @@ export default class DogContainer extends Component {
             } throw new Error(res)
         })
         .then(resJson => {
-            window.location.href='http://localhost:3000/';
+            window.location.href='http://localhost:3000/dogs/adopt';
         })
         .catch(err => (console.log(err))) 
     }
@@ -95,6 +95,7 @@ export default class DogContainer extends Component {
                                     image1={dog.image1}
                                     image2={dog.image2}
                                     handleEditDog = {this.props.handleEditDog}
+                                    handleChecked={this.props.handleChecked}
                                     editDog={this.editDog}
                                     dogToEdit={this.props.dogToEdit}
                                     handleDeleteDog = {this.props.handleDeleteDog}
@@ -113,6 +114,7 @@ export default class DogContainer extends Component {
                 idOfDogToEdit = {this.state.idOfDogToEdit}
                 dogCurrentlyBeingEdited = {this.state.dogCurrentlyBeingEdited}
                 handleEditChange = {this.handleEditChange}
+                handleChecked={this.props.handleChecked}
                 updateDog = {this.updateDog}/>
             )
         } 

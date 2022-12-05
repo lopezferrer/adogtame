@@ -17,12 +17,13 @@ export default class App extends React.Component {
           personality: '',
           city: '',
           contact_number: '',
-          vaccines: '',
+          vaccines: false,
           image1: '',
           image2: ''
         }],
       baseURL: 'http://localhost:8000/api/v1/dogs/'
-    }
+    };
+    this.handleChecked = this.handleChecked.bind(this);
   }
   getDogs = () => {
     fetch(baseURL)
@@ -57,6 +58,10 @@ export default class App extends React.Component {
     console.log('editDog is:' + id)
   }
 
+  handleChecked () {
+    this.setState({vaccines: !this.state.dogs.vaccines});
+  }
+
   componentDidMount(){
     this.getDogs();
   }
@@ -64,7 +69,7 @@ export default class App extends React.Component {
   render(){
     return (
       <div className="dogs-app-container">  
-          <DogContainer dogs={this.state.dogs} editDog={this.editDog} dogToEdit={this.state.dogToEdit} handleDeleteDog={this.handleDeleteDog} baseURL={this.state.baseURL}/>
+          <DogContainer dogs={this.state.dogs} editDog={this.editDog} dogToEdit={this.state.dogToEdit} handleDeleteDog={this.handleDeleteDog} handleChecked={this.handleChecked} baseURL={this.state.baseURL}/>
       </div>
     )
   }

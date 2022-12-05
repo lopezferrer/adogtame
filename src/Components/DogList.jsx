@@ -13,20 +13,20 @@ export default class DogList extends Component {
                     <h4>Age: <span>{this.props.age} year(s) old</span> </h4>
                     <h4>Breed: <span>{this.props.breed}</span></h4>
                     <h4>City: <span>{this.props.city}</span></h4>
-                    {
-                    userAdmin === true ?
+                    { userAdmin === true ?
                     <div>
-                    <button className="edit-button" onClick={()=> {
-                        this.props.editDog(this.props.id);
-                        this.props.updateIdOfDogToEdit(this.props.id);
-                        //window.location.href=`/dogs/edit?id=${this.props.id}`
-                    }}>Edit</button>
-                    <button className='delete-button' onClick={() => {
-                        this.props.handleDeleteDog(this.props.id);
-                    }}>Delete</button>
+                        <button className="edit-button" onClick={()=> {
+                            this.props.editDog(this.props.id);
+                            this.props.updateIdOfDogToEdit(this.props.id);
+                            //window.location.href=`/dogs/edit?id=${this.props.id}`
+                        }}>Edit</button>
+                        <button className='delete-button' onClick={() => {
+                            this.props.handleDeleteDog(this.props.id);
+                        }}>Delete</button>
                     </div>
                     :
-                    <></>}
+                    <></>
+                    }
                 </div>
             </div>
         )

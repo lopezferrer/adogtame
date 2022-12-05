@@ -91,12 +91,20 @@
     text-align: center;
   }
 
+  .linkstyle:hover{
+    text-decoration:underline;
+  }
+
   .linkstyle-last {
     width: 250px;
     text-decoration: none;
     color: black;
     padding: 20px;
     text-align: center;
+  }
+
+  .linkstyle-last:hover{
+    text-decoration:underline;
   }
 
   .footer-container {
@@ -124,6 +132,11 @@
     overflow:auto;
   }
 
+  .veterinarian-home-container {
+    width: 98.5%;
+    min-height: 100%;
+  }
+
   h3{
     line-height: 0.2;
   }
@@ -137,20 +150,26 @@
   }
 
   .dogs-app-container, .articles-app-container {
-    width: 50%;
-    display: block;
+    max-width: 50%;
+    display: flex;
+    flex-direction: row;
     overflow: auto;
     height: auto;
     min-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .veterinarians-app-container {
-    max-width: 1000px;
-    display: block;
-    height: calc(100vh - 350px);
+  .veterinarians-app-containers {
+    max-width: 80%;
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+    height: auto;
     min-height: 100%;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: blue;
   }
 
   .new-button, .input-button, .back-button, .delete-button, .edit-button, .register-button, .login-button{
@@ -176,7 +195,6 @@
     height: 20px;
   }
   
-  
   .input-button {
     margin: 5px auto 0px auto;
     width: 140px;
@@ -193,7 +211,7 @@
     margin-right: 10px;
   }
   .dog-container-head, .article-container-head {
-    width: 90%;
+    width: 95%;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -202,21 +220,49 @@
     margin-bottom: -25px;
   }
 
-  .dog, .article {
-    width: 90%;
+  .veterinarian-container-head {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: -25px;
+  }
+
+  .veterinarian {
+    max-width: 50%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 40px;
     border-bottom: 1px solid brown;
     padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    line-height: 0.6;
   }
 
-  .dog img {
-    width: 100%;
+  .veterinarian-name h3 {
+    line-height: 1;
   }
 
-  .article img {
-    width: 100%;
+  .dog, .article {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    border-bottom: 1px solid brown;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .dog img, .article img {
+    max-width: 100%;
+    max-height: 420px;
+    margin-right: auto;
+    margin-left: auto;
+    object-fit: cover;
   }
 
   form {
@@ -237,7 +283,7 @@
     width: 95%;
   }
 
-  .article-form-container form {
+  .article-form-container {
     width: 60%;
     margin: 0px auto 20px auto;
     padding: 20px 10px 10px 10px;
@@ -250,7 +296,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-
   }
   
   .vaccines-container label {
@@ -280,6 +325,40 @@
     height:100%;
     margin: auto;
     padding-top: 10%;
+  }
+
+  .long-form-container{
+    left: 100px;
+  }
+
+  .form-container {
+    width: 230px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+  }
+
+  .veterinarian-input-button {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 8px;
+    line-height: 0.8;
+    border-radius: 500px;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s;
+    border: 1px solid transparent;
+    letter-spacing: 1px;
+    width: 120px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 700;
+    text-align: center;
+    padding: 10px 10px 15px 10px;
+    color: black;
+    box-shadow: inset 0 0 0 2px #616467;
+    background-color: lightgreen;
+    height: 20px;
   }
 }
 

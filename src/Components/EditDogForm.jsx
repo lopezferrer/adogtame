@@ -2,8 +2,22 @@ import React, { Component } from 'react'
 
 export default class EditDogForm extends Component {
     render () {
+        var txt
+        if (this.props.dogCurrentlyBeingEdited.vaccines === true ) {
+             txt = 'checked'
+             console.log(this.props.dogCurrentlyBeingEdited.vaccines)
+             console.log(this.props.handleChecked)
+        } else {
+            txt = ''
+            console.log(this.props.dogCurrentlyBeingEdited.vaccines)
+            console.log(this.props.handleChecked)
+        }
         return (
-            <div>
+            <div className="long-form-container">
+                <div className="form-title">
+                    <h2>Edit Dog</h2>
+                </div>
+                <div className="form-container">
                 <form onSubmit={this.props.updateDog} >
                     <input
                         id='name'
@@ -53,13 +67,14 @@ export default class EditDogForm extends Component {
                         placeholder='Contact Number'
                     >
                     </input>
-                    <div>
+                    <div className="vaccines-container">
                         <label htmlFor="vaccinated">Vaccines</label>
                         <input
                         id="vaccinated"
                         type='checkbox'
-                        defaultValue={this.props.dogCurrentlyBeingEdited.vaccinated}
-                        onChange={this.props.handleEditChange}/>
+                        onChange={this.props.handleChecked}
+                        checked={txt}/>
+                        
                     </div>
                     <input
                         id='image1'
@@ -81,7 +96,8 @@ export default class EditDogForm extends Component {
                         type='submit'
                         value='Update Dog'
                     />
-                </form>
+                    </form>
+                </div>
             </div>
         )
     }
