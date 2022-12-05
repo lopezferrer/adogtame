@@ -50,7 +50,7 @@ export default class RegisterForm extends Component {
             window.location.href='http://localhost:3000/login'
         })
         //.catch(err => (console.log(err)))
-        .catch(err => alert('Username or email already in use. Please try Again'))
+        .catch(err => alert('Information incomplete or already in use. Please try Again'))
     }
 
     render() {
