@@ -21,14 +21,11 @@ export default class LoginForm extends Component {
         e.preventDefault()
         console.log("this.state.email::> ",this.state.email);
         console.log("this.state.password::> ",this.state.password);
-        fetch('http://localhost:8000/api/v1/user/login/', {
-            mode: 'cors',
+        fetch('http://localhost:8000/api/v1/user/login', {
             method: 'POST',
             credentials: 'include',
             headers: {
                 "Content-Type": "application/json",
-                Accept: "application/json",
-                Origin: "http://localhost:3000",
                 },
             body: JSON.stringify({
                 email: this.state.email,
@@ -37,7 +34,7 @@ export default class LoginForm extends Component {
         })
         .then (res => { 
             if(res.ok) {
-                res.json().then(_json => {
+                res.clone().json().then(_json => {
                     window.localStorage.setItem('loggedUser',JSON.stringify(_json.data));
                 })
                 return res.json()
