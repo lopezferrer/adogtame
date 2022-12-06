@@ -72,7 +72,7 @@ export default class ArticleContainer extends Component {
                     <div className="article-container2">
                         <div className="article-container-head">
                             <h2>Articles</h2>
-                            {(user != null && user.username === this.props.username) || (user != null && user.admin === true) ?
+                            {(user != null && user.admin === true) ?
                             <Link to="/articles/new"><button className="new-button">Add New</button></Link>
                             :
                             <></>

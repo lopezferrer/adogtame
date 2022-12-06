@@ -12,13 +12,22 @@ export default class Layout extends React.Component {
       headers: {
         "Content-Type": "application/json"
       }})
-    .then( () => {
-      window.localStorage.removeItem("loggedUser");
+    .then (res => {
+      if(res.ok) {
+        res.clone().json().then(_json => {
+          window.localStorage.removeItem("loggedUser");
+        })
+        return res.json()
+      }
+      throw new Error(res)
     })
     .catch(e => {
       console.log("e::> ",e);
     })
   }
+
+
+
   render() {
     return (
         <div className='adogtame-container'>

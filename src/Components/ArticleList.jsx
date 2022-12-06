@@ -13,7 +13,7 @@ export default class ArticleList extends Component {
                     <h5>{this.props.summary}</h5>
                     <img src={this.props.image} alt={this.props.title} className="image1"/>
                     <p>{this.props.body}</p>
-                    { user != null ?
+                    { (user != null && user.username === this.props.username) || (user != null && user.admin === true) ?
                         <div>
                         <button className="edit-button" onClick={()=> {
                             this.props.editArticle(this.props.id);

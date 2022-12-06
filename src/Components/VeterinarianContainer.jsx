@@ -72,7 +72,7 @@ export default class VeterinarianContainer extends Component {
                     <div className="veterinarian-container">
                         <div className="veterinarian-container-head">
                             <h2>Veterinarians</h2>
-                            { user.admin === true ?
+                            { (user != null && user.admin === true) ?
                             <Link to="/veterinarians/new"><button className="new-button">Add New</button></Link>
                             :
                             <></>
